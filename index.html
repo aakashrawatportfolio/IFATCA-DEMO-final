@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Pricing Table Design | Bootstrap Pricing Table</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<style>
+    body {
+        background: white;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .pricing-area {
+        padding: 80px 0;
+    }
+
+    .single-price {
+        padding-bottom: 25px;
+        background: #fff;
+        text-align: center;
+        height: 1000px !important;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .single-price a {
+        background: #162d5a;
+        color: #fff;
+        font-size: 20px;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 25px;
+        display: inline-block;
+    }
+
+    .single-price:hover {
+        cursor: pointer;
+        box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.1);
+        transform: scale(1.04);
+    }
+
+    .single-price::before {
+        content: "";
+        width: 100%;
+        height: 350px;
+        background: #cb3421;
+        position: absolute;
+        top: -150px;
+        left: 0;
+       
+    }
+
+    .single-price .price-header {
+        padding: 20px 20px 60px;
+        text-align: left;
+        position: relative;
+    }
+
+    .single-price .title {
+        font-size: 35px;
+        font-weight: 600;
+        color: #fff;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    .single-price .price-value {
+        display: inline-block;
+       
+        height: 110px;
+        padding: -15px;
+        border-top: none;
+        border-bottom: none;
+        position: relative;
+    }
+
+    .single-price .value {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border: 5px solid #262626;
+        border-top: none;
+        border-bottom: none;
+        z-index: 1;
+        position: relative;
+    }
+
+    .single-price .value::before,
+    .single-price .value::after {
+        content: "";
+        width: 97px;
+        height: 97px;
+        background: #fff;
+        border: 5px solid #262626;
+        border-bottom: none;
+        border-right: none;
+        position: absolute;
+        top: -48px;
+        left: 50%;
+        z-index: -1;
+        transform: translateX(-50%) scaleY(0.5) rotate(45deg);
+    }
+
+    .single-price .value::after {
+        border-right: 5px solid #262626;
+        border-bottom: 5px solid #262626;
+        border-top: none;
+        border-left: none;
+        top: auto;
+        bottom: -48px;
+    }
+
+    .single-price .currency {
+        display: inline-block;
+        font-size: 30px;
+        margin-top: 7px;
+        vertical-align: top;
+    }
+
+    .single-price .amount {
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 65px;
+    }
+
+    .single-price .amount span {
+        display: inline-block;
+        font-size: 30px;
+        font-weight: normal;
+        vertical-align: top;
+        margin-top: -7px;
+    }
+
+    .single-price .month {
+        display: block;
+        font-size: 16px;
+        line-height: 0;
+    }
+
+    .single-price .deals {
+        padding: 2px 0 0 0;
+        margin-bottom: 20px;
+        list-style: none;
+        text-align: center;
+        transition: all 0.3s ease 0s;
+    }
+
+    .single-price .deals li {
+        padding: 2px 0;
+        font-size: 16px;
+        color: #808080;
+
+    }
+
+    @media only screen and (max-width: 990px) {
+        .single-price {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        .single-price:before {
+            transform: skewY(-15deg);
+        }
+
+        .single-price .title {
+            font-size: 22px;
+        }
+    }
+
+    /* Media query for responsiveness */
+    @media (max-width: 768px) {
+        .card {
+            width: 90%;
+            max-width: 100%;
+            /* Full width on smaller screens */
+            margin: 20px auto;
+        }
+
+        .col-md-4 {
+            flex: 0 0 calc(50% - 20px);
+            /* Adjust column width for smaller screens */
+            max-width: calc(50% - 20px);
+            /* Adjust column width for smaller screens */
+        }
+    }
+
+    .head-banner {
+    max-width: 100%;
+    height: auto;
+    background: #cb3421;
+    color: white;
+    padding-top: 10px;
+    height: 200px;
+    text-align: center; /* Center the image horizontally */
+}
+
+
+
+
+    .row {
+        margin-left: 200px;
+        width: 100%;
+        gap: 20px;
+    }
+
+    /* Basic styles for the card */
+    /* Basic styles for the card */
+    .card {
+        position: relative;
+        width: 800px;
+        height: 350px !important;
+        background-color: #cb3421;
+        border-radius: 0px;
+        color: white;
+        transition: box-shadow 0.3s ease-in-out;
+        margin: 20px auto;
+        margin-bottom: 20px;
+    }
+
+    /* Add the small box using ::before pseudo-element */
+    .card::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #cb3421;
+        top: 0;
+        left: 0;
+        border-top-left-radius: 5px;
+    }
+
+    /* Text styles */
+    .card h1 {
+        text-align: center;
+        font-weight: 600;
+        font-size: 30px;
+        padding-top: 10px;
+    }
+
+    .card p {
+        text-align: center;
+        font-weight: 300;
+        font-size: 25px;
+    }
+
+    /* Hover effect - Modify the shadow on hover */
+    .card:hover {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Media query for responsiveness */
+    @media (max-width: 768px) {
+        .card {
+            width: 100%;
+            margin: 20px auto;
+        }
+    }
+
+    .sponsorship-details {
+        width: 80%;
+        margin: 0 auto;
+        background-color: white;
+        color: #cb3421;
+        padding: 20px;
+        border-radius: 10px;
+        font-weight: 400;
+        font-size: 18px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .bullet-points {
+        list-style: none;
+        padding: 0;
+
+        margin-top: 20px;
+    }
+
+    .bullet-points li {
+        margin-bottom: 10px;
+        font-weight: 300;
+    }
+
+    .bullet-points i {
+        font-size: 10px;
+    }
+
+    p {
+        text-align: center;
+    }
+    .rectangle-box {
+    width: 250px;
+    height: 85px;
+    background-color: #162d5a;
+    color: white;
+   border-radius: 30px;
+    padding: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+</style>
+
+<body>
+    <div class="head-banner">
+<H1 style="text-align: center; font-weight: 600; padding-top: 47px; font-size: 50px;">SPONSERSHIP OPPORTUNITIES</H1>
+    </div>
+    <div class="pricing-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-price">
+                        <div class="price-header">
+                            <h3 style="text-align: center; padding-top: 15px;" class="title">Gold<br><span style="font-size: 29px;">SPONSERSHIP</span></h3>
+                            <!-- <h2 style="color: #fff;">SPONSERSHIP</h2> -->
+                        </div>
+                        <div class="price-value">
+                            <!-- <div class="value">
+                                <span style="font-weight: 600;" class="month">USD</span>
+                                <span class="currency">$</span><span class="amount">5,000<span>++</span></span>
+                            </div> -->
+                            <div class="rectangle-box">
+                                <h2 style="font-size: 25px; text-align: center; padding-top: 10px;">USD 5,000.00 ++</h2>
+                            
+                            </div>
+                            
+                        </div>
+                        <ul style="text-align: left; padding-left: 20px;" class="deals">
+                            <h3 style="font-weight: 600; font-size: 25px;">Includes</h1>
+                                <li>• One standard table with linen and 2 chairs
+                                </li>
+                                <li>• One TV screen / monitor with support stand</li>
+                                <li>• Two conference passes</li>
+                                <li>• Wi-Fi access</li>
+
+                        </ul>
+                        <ul style="text-align: left; padding-left: 20px;" class="deals">
+                            <h3 style="font-weight: 600; font-size: 20px;">Available advertising
+                                options
+                                <br><span>(In person discussion)</span></h3>
+                                <li>• Company logo to be featured on conference website, selected
+                                    marketing materials*, event signage and social media platforms.
+                                </li>
+                                <li>• Company logo to be featured on main plenary backdrop.
+                                </li>
+                                <li>• Acknowledgement as Gold sponsor for the conference.</li>
+
+
+                        </ul>
+                     
+                        <!-- <a style="margin-top: 246px;" href="#">Get Started</a> -->
+                 
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-price">
+                        <div class="price-header">
+                            <h3 style="text-align: center; padding-top: 15px;" class="title">Platinum<br><span style="font-size: 29px;">SPONSERSHIP</span></h3>
+                            <!-- <h2 style="color: #fff;">SPONSERSHIP</h2> -->
+                        </div>
+                        <div class="price-value">
+                            <div class="rectangle-box">
+                                <h2 style="font-size: 22px; text-align: center; padding-top: 10px;">USD 8,000.00 ++</h2>
+                              
+                            </div>
+                        </div>
+                        <ul style="text-align: left; padding-left: 20px;" class="deals">
+                            <h3 style="font-weight: 600; font-size: 25px;">Includes</h1>
+                            <li>• Exhibition booth with 2 standard tables with linen and 4 chairs
+                            </li>
+                            <li>• One TV screen / monitor with support stand</li>
+                            <li>• Four conference passes
+                            </li>
+                            <li>• Wi-Fi access
+                            </li>
+                            <li>• Speaker Opportunity: Technical presentation at IFATCA Plenary
+                                and relevant committee meeting
+                            </li>
+                            <li>• VIP Access to IFATCA Executive Board: High-profile networking
+                                opportunities
+                            </li>
+                        </ul>
+                        <ul style="text-align: left; padding-left: 20px;" class="deals">
+                            <h3 style="font-weight: 600; font-size: 20px;">Available advertising
+                                options
+                                <br><span>(In person discussion)</span></h3>
+                            <li>• Premium Advertisement: Company logo to be featured on
+                                conference website, selected marketing materials, event signage and
+                                social media platforms.
+                            </li>
+                            <li>• Company logo to be featured on main plenary backdrop.</li>
+                            <li>• Printing of Company logo on selected merchandise and standees.
+                            </li>
+                            <li>• Acknowledgement as Platinum Sponsor for the conference
+                            </li>
+                            <li>• Prime logo placement
+                            </li>
+                           
+                        </ul>
+                        <!-- <a href="#">Get Started</a> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h1 style="text-align: center;">OTHER SPONSERSHIP PACKAGES</h1>
+        <p style="text-align: center; font-weight: bold; font-size: 22px;">USD 2,000.00 ++</p>
+        <div class="sponsorship-details">
+
+            <ul style="font-weight: 600;" class="bullet-points">
+                <li><i class="fas fa-square"></i> Full/part sponsor of Welcome Reception</li>
+                <li><i class="fas fa-square"></i> Full/part sponsor of Farewell Dinner</li>
+                <li><i class="fas fa-square"></i> Per day Lunch</li>
+                <li><i class="fas fa-square"></i> Tea Breaks</li>
+            </ul>
+
+            <h4 style="text-align: center;">All sponsors will be acknowledged
+            </h4>
+           
+
+        </body>
+        </html>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
